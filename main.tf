@@ -4,15 +4,15 @@ region = "us-east-1"
 
 resource "aws_instance" "one" {
 count = 5
-ami = "ami-0ddc798b3f1a5117e"
+ami = "ami-0f214d1b3d031dc53"
 instance_type = "t2.medium"
-key_name = "rahull"
-vpc_security_group_ids = ["sg-05f044979e305302e"]
+key_name = "rajesh"
+vpc_security_group_ids = ["sg-0263fa65bb35e61f6"]
 tags = {
 Name = var.instance_names[count.index]
 }
 }
 
 variable "instance_names" {
-default = ["jenkins", "nexus", "tomcat-1", "tomcat-2", "Monitoring server"]
+default = ["jenkins", "nexus", "app-server-1", "app-server-2", "Monitoring server"]
 }
